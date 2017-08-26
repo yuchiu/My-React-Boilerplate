@@ -18,7 +18,7 @@ npm run build
 
 ```
 This will get your files running on http://localhost:8080
-Webpack will watch for changes and update the browser when files is changed.
+Webpack will watch for changes and auto update the browser when files is changed
 
 
 #### 2b. open files locally
@@ -28,4 +28,4 @@ run webpack
 npm webpack -w
 
 ```
-this will create the dist folder and you could open index.html locally
+this will create the dist folder in hard drive and index.html could be opened directly
