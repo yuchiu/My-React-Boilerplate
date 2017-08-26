@@ -7,7 +7,7 @@ class Layout extends React.Component {
     return (
       <div className='layout-container'>
         <h1>
-          My template
+          My React Template
         </h1>
       </div>
     )

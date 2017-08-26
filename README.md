@@ -1,4 +1,4 @@
-## My template
+## My React Template
 
 
 ### Usage 
