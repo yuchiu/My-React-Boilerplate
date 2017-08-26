@@ -1,9 +1,10 @@
-var webpack = require('webpack');
-var path = require('path');
-var htmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const ETP = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: {
+  entry: {
     app: path.join(__dirname, 'src', 'index.js')
   },
 
@@ -16,31 +17,47 @@ module.exports = {
   devtool: '#source-map',
 
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['react', 'es2015']
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
+      }, {
+        test: /\.(css|scss|sass)$/,
+        loader: ETP.extract({fallback: 'style-loader', use: 'css-loader?minimize!postcss-loader!sass-loader'}),
+        include: path.join(__dirname, 'assets', 'scss')
+      }, {
+        test: /\.(png|jpg)$/,
+        loader: 'file-loader',
+        include: path.join(__dirname, 'assets', 'img')
       }
-    }, {
-      test: /\.scss$/, 
-      loader: 'style-loader!css-loader!sass-loader'
-    }]
+    ]
   },
 
-  devServer :{
-      contentBase: path.join(__dirname, 'dist'),
-      inline: true,
-      stats: 'errors-only',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    inline: true,
+    stats: 'errors-only',
+    hot: true,
+    historyApiFallback: true
 
   },
-  plugins :[
+
+  resolve: {
+    alias: {
+      'styles': path.resolve(__dirname, 'assets/scss/')
+    }
+  },
+  plugins: [
     new htmlWebpackPlugin({
-      template: path.join(__dirname,'src','index.html'),
-      hash:true
-    })
-
+      template: path.join(__dirname, 'src', 'index.html'),
+      hash: true
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new ETP('styles.css')
   ]
 
 }
