@@ -22,10 +22,10 @@ Webpack will watch for changes and auto update the browser when files is changed
 
 
 #### 2b. open files locally
-run webpack
+run webpack watch
 
 ```
 npm webpack -w
 
 ```
-this will create the dist folder in hard drive and index.html could be opened directly
+This will create the dist folder in hard drive and index.html could be opened directly
