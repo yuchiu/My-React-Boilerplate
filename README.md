@@ -17,7 +17,7 @@ run the webpack dev server
 npm run build
 
 ```
-This will get your files running on http://localhost:8080
+This will get the files running on http://localhost:8080
 Webpack will watch for changes and auto update the browser when files is changed
 
 
