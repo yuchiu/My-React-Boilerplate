@@ -1,5 +1,7 @@
 # My React Template
 
+Hot loading enabled, CSS postfixer and prefixer enabled, ready to run on localhost.
+
 ### Usage 
 #### 1. First install everything
 
@@ -20,7 +22,7 @@ This will get the files running on http://localhost:8080
 Webpack will watch for changes and update the browser when file changes.
 
 #### 2b. build dist directory
-run webpack watch
+run webpack
 
 ```
 npm build
