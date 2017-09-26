@@ -10,39 +10,42 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    sourceMapFilename: '[name].bundle.map',
-    publicPath: '/'
+    sourceMapFilename: '[name].bundle.map'
   },
 
   devtool: '#source-map',
 
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['react', 'es2015']
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
+      }, {
+        test: /\.(css|scss|sass)$/,
+        loader: 'style-loader!css-loader!postcss-loader!sass-loader',
+        include: path.join(__dirname, 'src','styles', 'scss')
+      }, {
+        test: /\.(png|jpg)$/,
+        loader: 'file-loader',
+        include: path.join(__dirname, 'assets', 'img')
       }
-    }, {
-      test: /\.(css|scss|sass)$/,
-      loader: 'style-loader!css-loader!postcss-loader!sass-loader',
-      include: path.join(__dirname, 'assets', 'scss')
-    }, {
-      test: /\.(png|jpg)$/,
-      loader: 'file-loader',
-      include: path.join(__dirname, 'assets', 'img')
-    }]
+    ]
   },
 
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback :true,
     contentBase: path.join(__dirname, 'dist'),
     inline: true,
-    hot: true,
+    hot : true,
     stats: 'errors-only'
   },
 
+
+  
   plugins: [
     new htmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
@@ -50,4 +53,5 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ]
+
 }
