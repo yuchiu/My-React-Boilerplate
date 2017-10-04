@@ -1,4 +1,4 @@
-# My React Template
+# My React Boilerplate
 
 Hot loading enabled, CSS postfixer and prefixer enabled, ready to run on localhost.
 
