@@ -6,7 +6,7 @@ class Layout extends React.Component {
   render() {
     return (
       <div id="title">
-        My React Template
+        My React Boilerplate
       </div>
 
     )

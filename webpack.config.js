@@ -1,6 +1,7 @@
-var webpack = require('webpack');
-var path = require('path');
-var htmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack')
+var path = require('path')
+var htmlWebpackPlugin = require('html-webpack-plugin')
+var OpenBrowserPlugin = require('open-browser-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -16,35 +17,31 @@ module.exports = {
   devtool: '#source-map',
 
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015']
-        }
-      }, {
-        test: /\.(css|scss|sass)$/,
-        loader: 'style-loader!css-loader!postcss-loader!sass-loader',
-        include: path.join(__dirname, 'src','styles', 'scss')
-      }, {
-        test: /\.(png|jpg)$/,
-        loader: 'file-loader',
-        include: path.join(__dirname, 'assets', 'img')
+    loaders: [{
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['react', 'es2015']
       }
-    ]
+    }, {
+      test: /\.(css|scss|sass)$/,
+      loader: 'style-loader!css-loader!postcss-loader!sass-loader',
+      include: path.join(__dirname, 'src', 'styles', 'scss')
+    }, {
+      test: /\.(png|jpg)$/,
+      loader: 'file-loader',
+      include: path.join(__dirname, 'assets', 'img')
+    }]
   },
 
   devServer: {
-    historyApiFallback :true,
+    historyApiFallback: true,
     contentBase: path.join(__dirname, 'dist'),
     inline: true,
-    hot : true,
+    hot: true,
     stats: 'errors-only'
   },
-
-
 
   plugins: process.env.NODE_ENV === 'production' ? [
     new webpack.DefinePlugin({
@@ -69,6 +66,9 @@ module.exports = {
       hash: true
     }),
     new webpack.HotModuleReplacementPlugin(),
-  ]
 
+    new OpenBrowserPlugin({
+      url: 'http://localhost:8080'
+    })
+  ]
 }
