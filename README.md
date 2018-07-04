@@ -1,38 +1,25 @@
-# My React Boilerplate
+# React Boilerplate
 
-Hot loading enabled, CSS postfixer and prefixer enabled, ready to run on localhost.
+## Usage
 
-### Usage 
-#### 1. First install package cross-env globally
-
-```
-npm i -g cross-env
-
-```
-Ensure npm scripts work properly across Linux, Windows, and all environments.
-
-#### 2. install everything else
+#### 1. Install all dependencies
 
 ```
 npm install
-
 ```
 
-#### 3a. run on localhost
-develop environment, run webpack dev server
+#### 2a. Development Environment
 
 ```
 npm start
-
 ```
-This will get the files running on http://localhost:8080
-Webpack will watch for changes and update the browser when file changes.
 
-#### 3b. build dist directory
-production environment, run webpack
+Application will be running on http://localhost:8080
+
+#### 2b. Production Environment
 
 ```
 npm run build
-
 ```
-The minified JS bundle files including the output html file will be store in dist directory.
+
+The minified bundle files will be compiled in dist directory.
