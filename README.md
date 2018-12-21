@@ -11,7 +11,7 @@
   - allow .env file to storing environment variables
 - eslint-plugin-prettier ∙ eslint-config-prettier ∙ eslint-config-airbnb-base
   - integrate linting style guide with airbnb-base and prettier instead of react-app
-- babel-plugin-module-resolver ∙ eslint-import-resolver-webpack ∙ eslint-plugin-import
+- babel-plugin-module-resolver ∙ eslint-import-resolver-alias ∙ eslint-plugin-import
   - allow alias "@/" as global import
 - react-router-dom
   - setup Single Page Application
