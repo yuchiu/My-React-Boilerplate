@@ -3,9 +3,10 @@ import logo from "./logo.svg";
 import "./index.scss";
 
 const LandingPage = () => (
-  <div className="landing-page page-wrapper">
-    <header className="landing-header">
+  <div className="landing-page">
+    <main className="landing-section">
       <img src={logo} className="landing-logo" alt="logo" />
+      <h1 className="landing-title">React Boilerplate</h1>
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>
@@ -17,7 +18,7 @@ const LandingPage = () => (
       >
         Learn React
       </a>
-    </header>
+    </main>
   </div>
 );
 

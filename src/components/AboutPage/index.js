@@ -3,16 +3,18 @@ import React from "react";
 import "./index.scss";
 
 const AboutPage = () => (
-  <div className="about-page-wrapper page-wrapper">
-    <div className="about">
-      <h3 className="about__name about__item ">React Boilerplate</h3>
-      <p className="about__desc about__item">
+  <div className="about-page-wrapper">
+    <main className="about-section">
+      <h1 className="about-section__name about-section__item ">
+        React Boilerplate
+      </h1>
+      <p className="about-section__desc about-section__item">
         <b>minimal features add on to Create-React-App</b>
       </p>
-      <p className="about__desc about__item">
+      <p className="about-section__desc about-section__item">
         <b>React version 16.4.2</b>
       </p>
-      <p className="about__desc">
+      <p className="about-section__desc">
         <b>cross-env</b>
         <br /> adopt environment variables across platforms without changing
         settings
@@ -37,7 +39,7 @@ const AboutPage = () => (
         <br /> enable scss, setup basic styling layout with flexbox in BEM
         naming convention
       </p>
-    </div>
+    </main>
   </div>
 );
 

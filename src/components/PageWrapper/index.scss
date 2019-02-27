@@ -1,0 +1,13 @@
+@import "../../assets/css/vars.scss";
+@import "../../assets/css/reset.scss";
+@import "../../assets/css/effects.scss";
+
+.page-wrapper {
+  min-height: calc(100% - (#{$navbarHeight} + #{$footerHeight}));
+}
+
+@media screen and (min-width: $MQ-sm) {
+  .page-wrapper {
+    min-height: calc(100% - (#{$navbarHeightMQ600Min} + #{$footerHeight}));
+  }
+}

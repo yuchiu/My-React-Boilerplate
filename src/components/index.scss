@@ -4,7 +4,8 @@
 @import "../assets/fontawesome/css/all.min.css";
 
 html,
-body {
+body,
+#root {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,16 +14,6 @@ body {
   height: 100%;
   width: 100%;
 }
-#root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.page-wrapper {
-  min-height: calc(100% - (#{$navbarHeight} + #{$footerHeight}));
-}
 
 .pointer-cursor {
   cursor: pointer;
@@ -30,10 +21,4 @@ body {
 
 .no-highlight {
   user-select: none;
-}
-
-@media screen and (min-width: $MQ-sm) {
-  .page-wrapper {
-    min-height: calc(100% - (#{$navbarHeightMQ600Min} + #{$footerHeight}));
-  }
 }

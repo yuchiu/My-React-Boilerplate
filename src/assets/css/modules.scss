@@ -1,7 +1,7 @@
 @import "./vars.scss";
 
 @mixin defaultButton(
-  $size: 14px,
+  $font-size: $font-size-sm,
   $color: $black,
   $bgColor: $white,
   $padding: $spacing-sm,
@@ -12,7 +12,7 @@
   background-color: $bgColor;
   border-radius: $radius;
   border: 1px solid $borderColor;
-  font-size: $size;
+  font-size: $font-size;
   color: $color;
   text-align: center;
   line-height: 1;
