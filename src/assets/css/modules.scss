@@ -1,12 +1,12 @@
 @import "./vars.scss";
 
-@mixin button(
+@mixin defaultButton(
   $size: 14px,
   $color: $black,
   $bgColor: $white,
-  $padding: 5px,
-  $borderColor: $lightgrey,
-  $radius: 3px
+  $padding: $spacing-sm,
+  $borderColor: $light-grey,
+  $radius: 0
 ) {
   padding: $padding;
   background-color: $bgColor;
@@ -26,8 +26,13 @@
   }
 }
 
-@mixin list($direction: column, $inline: block) {
+@mixin defaultList($direction: column, $inline: block) {
   display: if($inline == block, flex, inline-flex);
   flex-direction: $direction;
   flex-wrap: wrap;
+}
+
+@mixin defaultInput($padding: $spacing-sm, $width: 150px) {
+  padding: $padding;
+  width: $width;
 }

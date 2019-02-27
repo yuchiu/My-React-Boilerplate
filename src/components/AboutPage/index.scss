@@ -25,7 +25,7 @@
   }
 }
 
-@media screen and (min-width: $MQ600Min) {
+@media screen and (min-width: $MQ-sm) {
   .about-page-wrapper {
     width: 70%;
   }
@@ -36,7 +36,7 @@
   }
 }
 
-@media screen and (min-width: $MQ1200Min) {
+@media screen and (min-width: $MQ-xl) {
   .about-page-wrapper {
     width: 50%;
   }

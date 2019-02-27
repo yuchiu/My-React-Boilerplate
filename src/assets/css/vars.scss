@@ -1,7 +1,9 @@
 /* Media Queries Break Point*/
-
-$MQ600Min: 600px;
-$MQ1200Min: 1200px;
+$MQ-sm: 576px;
+$MQ-md: 768px;
+$MQ-lg: 992px;
+$MQ-xl: 1200px;
+$MQ-xxl: 1400px;
 
 /* Sizes */
 
@@ -9,12 +11,22 @@ $footerHeight: 30px;
 $navbarHeight: 100px;
 $navbarHeightMQ600Min: 50px;
 
+$font-size-sm: 16px;
+$font-size-md: 20px;
+$font-size-lg: 24px;
+$font-size-xl: 28px;
+
+$spacing-sm: 4px;
+$spacing-md: 8px;
+$spacing-lg: 12px;
+$spacing-xl: 16px;
+
 /* Colors */
 
 $white: #fff;
-$verylightgrey: #e0e0e0;
-$lightgrey: #b1b1b1;
+$very-light-grey: #e0e0e0;
+$light-grey: #b1b1b1;
 $grey: #8b8b8b;
-$darkgrey: #535353;
-$verydarkgrey: #292929;
+$dark-grey: #535353;
+$very-dark-grey: #292929;
 $black: #000;

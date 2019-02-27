@@ -1,41 +1,22 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./index.scss";
+import { DefaultButton } from "@/components/common";
 
-class Navbar extends React.Component {
-  routeToLanding = () => {
-    const { history } = this.props;
-    history.push("/");
-  };
+const Navbar = () => (
+  <nav className="navbar-wrapper">
+    <section className="navbar-start">
+      <Link className="navbar-start__item no-highlight" to="/">
+        <DefaultButton> React Boilerplate </DefaultButton>
+      </Link>
+    </section>
+    <section className="navbar-end">
+      <Link className="navbar-end__item no-highlight" to="/about">
+        <DefaultButton> About </DefaultButton>
+      </Link>
+    </section>
+  </nav>
+);
 
-  routeToAbout = () => {
-    const { history } = this.props;
-    history.push("/about");
-  };
-
-  render() {
-    return (
-      <nav className="navbar-wrapper">
-        <div className="navbar-start">
-          <span
-            className="navbar-start__item pointer-cursor no-highlight"
-            onClick={this.routeToLanding}
-          >
-            React Boilerplate
-          </span>
-        </div>
-
-        <div className="navbar-end">
-          <div
-            className="navbar-end__item pointer-cursor no-highlight"
-            onClick={this.routeToAbout}
-          >
-            About
-          </div>
-        </div>
-      </nav>
-    );
-  }
-}
-export default withRouter(Navbar);
+export default Navbar;

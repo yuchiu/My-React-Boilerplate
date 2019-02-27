@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import Button from "./Button";
+import DefaultButton from "./DefaultButton";
 import Footer from "./Footer";
 
-export { Navbar, Footer, Button };
+export { Navbar, Footer, DefaultButton };
